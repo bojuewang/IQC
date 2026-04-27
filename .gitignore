@@ -1,14 +1,27 @@
+# Python virtual environments
 .venv/
 **/.venv/
+
+# Environment variables / secrets
 .env
 **/.env
+
+# Python cache
 __pycache__/
 **/__pycache__/
 *.pyc
+
+# Jupyter
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+
+# Logs and local artifacts
 logs/
 **/logs/
 anaconda_projects/
 **/anaconda_projects/
 *.db
+
+# OS files
+.DS_Store
+Thumbs.db

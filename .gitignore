@@ -1,18 +1,14 @@
-# Python virtual env
 .venv/
 **/.venv/
-
-# env
 .env
 **/.env
-
-# cache
 __pycache__/
+**/__pycache__/
 *.pyc
-
-# jupyter
 .ipynb_checkpoints/
-
-# logs
+**/.ipynb_checkpoints/
 logs/
 **/logs/
+anaconda_projects/
+**/anaconda_projects/
+*.db

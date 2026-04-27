@@ -1,35 +1,3 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
-# ============================================================
-# WorldQuant Brain FULL SCRAPER (16 datasets 自动抓取版)
-# 只需填写 Cookie 即可运行
-# ============================================================
-
-PROJECT="wqbrain_full_scraper"
-mkdir -p "$PROJECT"/{data,logs,scripts}
-cd "$PROJECT"
-
-# =====================
-# 1. Python 环境
-# =====================
-python3 -m venv .venv
-source .venv/bin/activate
-
-python -m pip install --upgrade pip
-python -m pip install requests pandas python-dotenv
-
-# =====================
-# 2. 环境变量
-# =====================
-cat > .env <<'EOF'
-WQB_COOKIE=cookieyes-consent=consentid:czhveGZmcWVFZzZlNFY5UEdYVzE4NXVjRXdjVGM1dlQ,consent:yes,action:yes,necessary:yes,functional:yes,analytics:yes,performance:yes,advertisement:yes,other:yes; _ga=GA1.1.177622511082117d7d5ba2de13; _fbp=fb.1.1776225166252.449640668535646284; _gcl_gs=2.1.k1$i1776903980$u44383394; _gcl_aw=GCL.1776912120.CjwKCAjw46HPBhAMEiwASZpLRCnSmnnr1jsYb4IKA0eIOl5GOi5dC9LmIBD3ShEk9bnzJV-iU7YjgxoCC0sQAvD_BwE; _ga_FXKNEPLB1N=GS2.1.s1776911885$o8$g1$t1776913828$j55$l0$h0; _gcl_au=1.1.1140661563.1776225166.2046007118.1777231237.1777231236; t=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJySjZaZllaemRMNXJ6a0g5SmVYelhYQkF4cW1TdERaZSIsImV4cCI6MTc3NzI2MTcwMn0.QAK6hHMVSVFK8N-R1kXBw-etdG3BBMToniuiniKNIPw; _ga_9RN6WVT1K1=GS2.1.s1777258231$o24$g1$t1777258769$j7$l0$h0; _rdt_uuid=1776225166030.3a9efe4c-2807-4ecc-a891-7b7de450fff6
-EOF
-
-# =====================
-# 3. Python 主程序
-# =====================
-cat > scripts/run.py <<'PY'
 import os
 import time
 import pandas as pd
@@ -251,22 +219,3 @@ print("datasets:", len(df_datasets))
 print("fields:", len(df_fields))
 print("saved: data/datasets.csv")
 print("saved: data/fields_all.csv")
-PY
-
-# =====================
-# 4. 运行脚本
-# =====================
-cat > run.sh <<'EOF'
-#!/usr/bin/env bash
-set -e
-source .venv/bin/activate
-python scripts/run.py
-EOF
-
-chmod +x run.sh
-
-echo ""
-echo "✅ 安装完成"
-echo "下一步："
-echo "1. 打开 .env 填写 Cookie"
-echo "2. 运行 ./run.sh"

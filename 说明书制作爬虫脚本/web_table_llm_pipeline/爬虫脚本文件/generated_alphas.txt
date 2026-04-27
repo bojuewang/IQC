@@ -1,0 +1,18 @@
+Loaded operators: 58
+First 20 operators: ['abs', 'and', 'bucket', 'days_from_last_change', 'densify', 'group_backfill', 'group_mean', 'group_neutralize', 'group_rank', 'group_scale', 'group_zscore', 'hump', 'if_else', 'inverse', 'is_nan', 'kth_element', 'last_diff_value', 'log', 'max', 'min']
+
+Manual alpha examples:
+   rank(subtract(close, open))
+   rank(log(multiply(volume, close)))
+
+Random alpha examples:
+   subtract(ts_mean(abs(open), 60), ts_delta(multiply(open, returns), 5))
+   ts_rank(abs(abs(returns)), 60)
+   abs(subtract(log(low), abs(volume)))
+   abs(ts_std_dev(rank(high), 20))
+   ts_delta(inverse(ts_std_dev(open, 60)), 10)
+   subtract(ts_mean(log(returns), 60), subtract(rank(open), subtract(vwap, high)))
+   inverse(inverse(ts_rank(open, 5)))
+   ts_std_dev(multiply(multiply(high, low), abs(close)), 60)
+   rank(ts_delta(ts_delta(close, 20), 10))
+   ts_std_dev(ts_rank(ts_std_dev(vwap, 20), 5), 5)

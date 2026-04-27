@@ -1,0 +1,18 @@
+# Python virtual env
+.venv/
+**/.venv/
+
+# env
+.env
+**/.env
+
+# cache
+__pycache__/
+*.pyc
+
+# jupyter
+.ipynb_checkpoints/
+
+# logs
+logs/
+**/logs/

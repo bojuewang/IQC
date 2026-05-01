@@ -1,0 +1,7 @@
+rank,alpha,total,readiness,risk,complexity,interpretability,notes
+1,"ts_rank(ts_rank(ts_delta(open, 20), 20), 5)",0.955,0.9,0.0,3,1.0,structurally clean
+2,"ts_rank(ts_delta(volume, 10), 20)",0.955,0.9,0.0,2,1.0,structurally clean
+3,rank(abs(high)),0.902,0.86,0.0,2,0.9,structurally clean
+4,"ts_rank(log(ts_rank(vwap, 5)), 5)",0.897,0.855,0.15,3,1.0,check log input positivity
+5,"rank(inverse(ts_rank(low, 60)))",0.897,0.855,0.15,3,1.0,may amplify outliers
+6,"rank(multiply(vwap, rank(open, 2)))",0.849,0.82,0.0,3,0.8,structurally clean

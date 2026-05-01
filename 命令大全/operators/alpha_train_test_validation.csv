@@ -1,0 +1,7 @@
+rank,alpha,passed,train_sharpe,test_sharpe,train_rank_ic,test_rank_ic,train_ic,test_ic,test_turnover,test_max_drawdown,stability
+1,"ts_rank(ts_rank(ts_delta(open, 20), 20), 5)",True,0.202,4.7045,0.0328,0.0826,0.04,0.0943,0.3931,-0.0109,23.2896
+2,"ts_rank(log(ts_rank(vwap, 5)), 5)",True,1.9958,1.8353,0.0275,0.0253,0.0289,0.0134,0.872,-0.0782,0.9196
+3,"rank(inverse(ts_rank(low, 60)))",False,0.4694,0.5572,0.0324,-0.0344,0.0399,-0.0432,0.0711,-0.0237,1.187
+4,"ts_rank(ts_delta(volume, 10), 20)",False,-0.6706,0.1126,-0.0222,-0.0213,-0.0139,-0.0262,0.692,-0.0384,0.1679
+5,"rank(multiply(vwap, rank(open, 2)))",False,-1.6362,-3.1247,-0.0358,-0.0723,-0.0298,-0.0809,0.0495,-0.1398,-1.9097
+6,rank(abs(high)),False,-1.6766,-3.1648,-0.0339,-0.0739,-0.0273,-0.0813,0.0432,-0.1379,-1.8876

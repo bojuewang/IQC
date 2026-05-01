@@ -1,0 +1,7 @@
+rank,alpha,passed,mean_test_sharpe,median_test_sharpe,mean_test_rank_ic,positive_sharpe_rate,positive_rank_ic_rate,n_windows
+1,"ts_rank(log(ts_rank(vwap, 5)), 5)",True,1.1746,2.0239,0.0222,0.6,0.6,5
+2,"ts_rank(ts_rank(ts_delta(open, 20), 20), 5)",False,0.0,0.0,0.0,0.0,0.0,5
+3,"rank(inverse(ts_rank(low, 60)))",False,0.0,0.0,0.0,0.0,0.0,5
+4,"ts_rank(ts_delta(volume, 10), 20)",False,0.0,0.0,0.0,0.0,0.0,5
+5,rank(abs(high)),False,-5.2072,-5.58,-0.0867,0.2,0.2,5
+6,"rank(multiply(vwap, rank(open, 2)))",False,-5.3078,-5.5012,-0.083,0.2,0.2,5
